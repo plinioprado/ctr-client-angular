@@ -1,0 +1,60 @@
+<div class="container">
+
+    <form name="form" novalidate>
+
+      <nav>
+         <button class="btn btn-default pull-right" ng-click="vm.rw=true" ng-show="!vm.rw">{{vm.txt[vm.lang].edit}}</button>
+      </nav>
+
+      <h2>Config</h2>
+
+      <h3>{{vm.txt[vm.lang].entity}}</h3>
+
+      <div class="row">
+         <div class="col-xs-12 col-sm-6">
+            <label>Cnpj/Cpf</label>
+            <input class="form-control" maxlength="15" ng-model="vm.data.entity.cod" ng-disabled="!vm.rw" type="text">
+         </div>
+         <div class="col-xs-12 col-sm-6">
+            <label>{{vm.txt[vm.lang].name}}</label>
+            <input class="form-control" maxlength="40" ng-model="vm.data.entity.name" ng-disabled="!vm.rw" type="text">
+         </div>
+      </div>
+
+      <div class="row">
+         <div class="col-xs-12 col-sm-6">
+            <label>{{vm.txt[vm.lang].shortName}}</label>
+            <input class="form-control" maxlength="15" ng-model="vm.data.entity.shortname" ng-disabled="!vm.rw" type="text">
+         </div>
+         <div class="col-xs-12 col-sm-6">
+            <label>{{vm.txt[vm.lang].language}}</label>
+            <select class="form-control" ng-model="vm.lang" ng-disabled="!vm.rw">
+               <option value="en-us">English</option>
+               <option value="pt-br">Português</option>
+            </select>
+         </div>
+      </div>
+
+      <hr>
+
+      <h3>{{vm.txt[vm.lang].user}}</h3>
+
+      <div class="row">
+         <div class="col-xs-12 col-sm-6">
+            <label>{{vm.txt[vm.lang].name}}</label>
+            <input class="form-control" type="text" ng-model="vm.data.user.name" ng-disabled="true">
+         </div>
+         <div class="col-xs-12 col-sm-6">
+            <label>{{vm.txt[vm.lang].std}}</label>
+            <input class="form-control" type="text" ng-model="vm.data.user.std" ng-disabled="true">
+         </div>
+      </div>
+
+      <nav>
+         <span class="submitMsg">{{vm.msg}}</span>
+         <button type="submit" class="btn btn-default" ng-click="vm.submit()" ng-show="vm.rw">Ok</button>
+      </nav>
+
+    </form>
+
+</div>
