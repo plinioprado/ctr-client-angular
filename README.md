@@ -1,4 +1,4 @@
-# Finance control client - Angular 1 
+# Invoice simulator client - Angular 1 
 
 This client application simulates a simplified portfolio invoices and their generation of account receivables. Compliant with the local legal and banking environment, as well as interfaces easy and familiar for the personnel usually found in the finance department of local companies.
 
