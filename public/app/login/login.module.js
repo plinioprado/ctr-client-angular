@@ -16,7 +16,7 @@
       var vm = this;
 
       vm.config;
-      vm.email = 'joao@exemplo.com.br';
+      vm.email = 'john@example.com';
       vm.msg = '';
       vm.pass = '123456';
       vm.submitted = false;
