@@ -54,7 +54,12 @@
 
     function httpPost(url, data) {
 
-      return $http.post(urlBase + url, data)
+      return $http({
+        method: 'POST',
+        url: urlBase + url,
+        data: data,
+        headers: {'Content-Type': 'application/x-www-form-urlencoded'}
+      })
         .then(function (response) {
           console.log('s-ok');
           console.log(response);
