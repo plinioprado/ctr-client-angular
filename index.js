@@ -3,7 +3,7 @@
 // Dependencies - general
 var express = require('express');
 var cn =  {
-  serverPort: 3000
+  serverPort: 3001
 };
 
 // Express

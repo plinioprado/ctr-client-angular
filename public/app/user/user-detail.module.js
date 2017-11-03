@@ -113,9 +113,10 @@
 
          function dataGetComplete(response) {
             if (response.status == 200) {
-               vm.data = response.data;
-               vm.dataActive = vm.data.active.toString();
-               vm.dataId = response.data._id == '0' ? 'Novo' : response.data._id;
+              console.log('data', response.data)
+              vm.data = response.data;
+              vm.dataActive = vm.data.active.toString();
+              vm.dataId = response.data.id == '0' ? 'Novo' : response.data.id;
             } else {
                vm.dataFailed(response);
             }
@@ -126,7 +127,7 @@
 
          vm.submitted = true;
 
-         if (vm.data._id == '0') {
+         if (vm.data.id == '0') {
 
             dataService.httpPost(vm.apiUrl, vm.data)
                .then(vm.dataComplete)
@@ -134,8 +135,8 @@
 
          } else {
 
-            var url = (vm.apiUrl + '/' + data._id);
-            delete data._id;
+            var url = (vm.apiUrl + '/' + data.id);
+            delete data.id;
 
             dataService.httpPut(url, vm.data)
                .then(vm.dataComplete)
@@ -145,9 +146,9 @@
 
       function dataDelete() {
 
-         if (vm.data._id == '0') return;
+         if (vm.data.id == '0') return;
 
-         dataService.httpDelete(vm.apiUrl + '/' + vm.data._id)
+         dataService.httpDelete(vm.apiUrl + '/' + vm.data.id)
             .then(vm.dataComplete)
             .catch(vm.dataFailed);
       }

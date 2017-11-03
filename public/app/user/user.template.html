@@ -18,7 +18,7 @@
       </thead>
       <tbody>
          <tr ng-repeat="item in vm.list | filter:vm.searchText | orderBy:vm.sortCol:vm.reverseSort">
-            <td><a href="#!/user/{{item._id}}">{{item.email}}</a></td>
+            <td><a href="#!/user/{{item.id}}">{{item.email}}</a></td>
             <td>{{item.name}}</td>
             <td>{{item.std}}</td>
             <td>{{item.active ? vm.txt[vm.lang].yes : vm.txt[vm.lang].no}}</td>
